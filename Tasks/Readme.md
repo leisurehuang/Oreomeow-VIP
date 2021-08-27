@@ -8,12 +8,12 @@
   
 - **Daily**
   ```
-  https://raw.githubusercontent.com/Oreomeow/VIP/main/Tasks/Daily.json
+  https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Tasks/Daily.json
   ```
   
 - **News**
   ```
-  https://raw.githubusercontent.com/Oreomeow/VIP/main/Tasks/News.json
+  https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Tasks/News.json
   ```
   
 - **V2PTaskSub** *By sngxpro*

@@ -1,6 +1,6 @@
 // @grant nodejs
 console.log("⏳ 开始执行 EUserv_extend.py")
-$exec('python3 https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/py/EUserv_extend.py', {
+$exec('python3 https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/py/EUserv_extend.py', {
   cwd: 'script/Shell',
   timeout: 0,
   env: {

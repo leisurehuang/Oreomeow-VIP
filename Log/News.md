@@ -250,6 +250,6 @@ exit
 
 
 
-[1]:https://github.com/Oreomeow/VIP/blob/main/Icons/News/1.jpg  
-[2]:https://github.com/Oreomeow/VIP/blob/main/Icons/News/2.jpg
-[3]:https://github.com/Oreomeow/VIP/blob/main/Icons/News/3.jpg
+[1]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/News/1.jpg  
+[2]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/News/2.jpg
+[3]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/News/3.jpg

@@ -146,25 +146,25 @@ docker restart jd
 > https://www.yuque.com/duya233/lx4vqg/fpegc5
 
 
-[Docker CE]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/Docker%20CE.png
-[ssh]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/ssh.png
-[pull]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/pull.png
-[ps]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/ps.png
-[WinSCP]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/WinSCP.png
-[jd]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/jd.png
-[root]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/root.png
-[cp]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/cp.png
-[it]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/it.png
-[ls]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/ls.png
-[done]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/done.png
-[mb]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/mb.png
-[config]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/config.png
-[cookie]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/cookie.png
-[pushplus]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/pushplus.png
-[token]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/token.png
-[export]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/export.png
-[jtask]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/jtask.png
-[log]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/log.png
-[push]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/push.png
-[config.sh]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/config.sh.png
-[replace]:https://github.com/Oreomeow/VIP/blob/main/Icons/nevinee/replace.png
+[Docker CE]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/Docker%20CE.png
+[ssh]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/ssh.png
+[pull]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/pull.png
+[ps]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/ps.png
+[WinSCP]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/WinSCP.png
+[jd]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/jd.png
+[root]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/root.png
+[cp]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/cp.png
+[it]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/it.png
+[ls]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/ls.png
+[done]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/done.png
+[mb]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/mb.png
+[config]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/config.png
+[cookie]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/cookie.png
+[pushplus]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/pushplus.png
+[token]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/token.png
+[export]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/export.png
+[jtask]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/jtask.png
+[log]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/log.png
+[push]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/push.png
+[config.sh]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/config.sh.png
+[replace]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/nevinee/replace.png

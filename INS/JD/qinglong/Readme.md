@@ -104,7 +104,7 @@ docker exec -it qinglong cat /ql/config/auth.json
 
 ## 四、拉取脚本
 
-最新拉取代码点击这里 [🗝](https://github.com/Oreomeow/VIP#-tasks)  
+最新拉取代码点击这里 [🗝](https://github.com/kiddin9/Oreomeow-VIP#-tasks)  
 国内vps等加`https://ghproxy.com/`  
 > 示例
 ```

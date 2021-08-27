@@ -20,7 +20,7 @@
             "time":"0,15,30,45 0-23 * * *",
             "job":{
                 "type":"runjs",
-                "target":"https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/js/News/wechatsubs.js"
+                "target":"https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/js/News/wechatsubs.js"
             },
             "running":false
         },

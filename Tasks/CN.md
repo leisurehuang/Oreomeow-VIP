@@ -1,7 +1,7 @@
 # CN
 - **elecV2P**
   ```
-  https://ghproxy.com/https://raw.githubusercontent.com/Oreomeow/VIP/main/Tasks/tasksubCN.json
+  https://ghproxy.com/https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Tasks/tasksubCN.json
   ```
   
 - **V2PTaskSub** *By sngxpro*

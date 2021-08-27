@@ -82,7 +82,7 @@ random_cookie() {
 update_ninja() {
     cp -rf /ql/config/sendNotify.js /ql/scripts/sendNotify.js
     cp -rf /ql/config/sendNotify.js /ql/ninja/backend/sendNotify.js
-    wget -q https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/html/index.html -O /ql/config/index.html
+    wget -q https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/html/index.html -O /ql/config/index.html
     cp -rf /ql/config/index.html /ql/ninja/backend/static/index.html
     cd /ql/ninja/backend && pm2 start
 }

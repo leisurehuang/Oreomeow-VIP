@@ -10,7 +10,7 @@
             "time":"0",
             "job":{
                 "type":"exec",
-                "target":"wget -q https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/py/requirements.txt -O requirements.txt && pip3 install -r requirements.txt"
+                "target":"wget -q https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/py/requirements.txt -O requirements.txt && pip3 install -r requirements.txt"
             },
             "running":false
         },
@@ -50,7 +50,7 @@
             "time":"0 10 */7 * *",
             "job":{
                 "type":"runjs",
-                "target":"https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/js/EUserv_extend.js"
+                "target":"https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/js/EUserv_extend.js"
             },
             "running":true
         },
@@ -60,7 +60,7 @@
             "time":"25 20 * * *",
             "job":{
                 "type":"runjs",
-                "target":"https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/js/mimotion.js"
+                "target":"https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/js/mimotion.js"
             },
             "running":true
         },
@@ -70,7 +70,7 @@
             "time":"25 7 */10 * *",
             "job":{
                 "type":"runjs",
-                "target":"https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/js/FNplus.js"
+                "target":"https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/js/FNplus.js"
             },
             "running":true
         },
@@ -80,7 +80,7 @@
             "time":"20 10 * * *",
             "job":{
                 "type":"runjs",
-                "target":"https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/js/airport.js"
+                "target":"https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/js/airport.js"
             },
             "running":true
         }

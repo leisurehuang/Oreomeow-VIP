@@ -8,7 +8,7 @@ $exec('pip3 install pytz', {
   }
 })
 console.log("⏳ 开始执行 mimotion.py")
-$exec('python3 https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/py/mimotion.py', {
+$exec('python3 https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/py/mimotion.py', {
   cwd: './script/Shell',
   timeout: 0,
   env: {

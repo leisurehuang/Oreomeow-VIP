@@ -360,6 +360,8 @@ if [ "$access" != "2" ]; then
             docker exec -it $CONTAINER_NAME bash -c "cd /ql;ps -ef|grep ninja|grep -v grep|awk '{print $1}'|xargs kill -9;rm -rf /ql/ninja;git clone https://ghproxy.com/https://github.com/shufflewzc/ninja.git /ql/ninja;cd /ql/ninja/backend;pnpm install;cp .env.example .env;cp sendNotify.js /ql/scripts/sendNotify.js;sed -i \"s/ALLOW_NUM=40/ALLOW_NUM=100/\" /ql/ninja/backend/.env;pm2 start"
             docker exec -it $CONTAINER_NAME bash -c "sed -i \"s/ALLOW_NUM=40/ALLOW_NUM=100/\" /ql/ninja/backend/.env && cd /ql/ninja/backend && pm2 start"
         fi
+        log "8.开始青龙内部配置"
+        docker exec -it $CONTAINER_NAME bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/kiddin9/Oreomeow-VIP@main/Scripts/sh/1custom.sh)"
     else
         warn "8.未检测到 token，取消内部配置"
     fi

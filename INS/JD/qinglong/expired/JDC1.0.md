@@ -142,5 +142,5 @@ nohup ./JDC &
 
 
 --------------------
-[cookie-get]:https://github.com/Oreomeow/VIP/blob/main/Icons/qinglong/JDC/cookie-get.png
-[2]:https://github.com/Oreomeow/VIP/blob/main/Icons/qinglong/JDC/2.png
+[cookie-get]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/qinglong/JDC/cookie-get.png
+[2]:https://github.com/kiddin9/Oreomeow-VIP/blob/main/Icons/qinglong/JDC/2.png
