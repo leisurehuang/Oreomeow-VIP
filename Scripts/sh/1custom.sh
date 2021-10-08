@@ -17,7 +17,6 @@ dl_update_shell() {
         exit 0
     fi
 }
-chmod 755 $config_update_path
 
 # 将 Update.sh 添加到定时任务
 add_update() {
@@ -36,7 +35,7 @@ run_update() {
     sleep 5
 }
 
-dl_update_shell && add_update && run_update
+dl_update_shell && chmod 755 $config_update_path && add_update && run_update
 
 # 添加定时任务 ql bot
 add_ql_bot() {
