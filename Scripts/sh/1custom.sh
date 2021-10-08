@@ -32,7 +32,6 @@ add_update() {
 # 运行一次 Update
 run_update() {
     task /ql/config/Update.sh; ql extra; task /ql/config/code.sh
-    sleep 5
 }
 
 dl_update_shell && chmod 755 $config_update_path && add_update && run_update
@@ -51,8 +50,6 @@ add_ql_bot() {
 # 运行一次并简单设置 bot.json
 set_bot_json() {
     ql bot
-    echo -e "------ 机器累了，休息 10s ------"
-    sleep 10
     echo -e "\"//user_id\": \"↓↓↓  你的USERID，去除双引号  ↓↓↓\",\n\"user_id\": 123456789,\n\"//bot_token\": \"↓↓↓  你的机器人TOKEN  ↓↓↓\",\n\"bot_token\": \"123456789:ABCDEFGSHSFDASDFAD\",\n\"//api_id\": \"↓↓↓  https://my.telegram.org 在该网站申请到的id  ↓↓↓\",\n\"api_id\": \"456423156\",\n\"//api_hash\": \"↓↓↓  https://my.telegram.org 在该网站申请到的hash  ↓↓↓\",\n\"api_hash\": \"ASDFAWEFADSFAWEFDSFASFD\","
     echo -e "----- 以上为示例，以下为你的配置(不要引号) -----"
     read -p "\"user_id\": " user_id
