@@ -7,8 +7,6 @@ dir_repo=/ql/repo
 config_update_path=$dir_config/Update.sh
 bot_json=$dir_config/bot.json
 
-docker exec -it qinglong bash
- 
 # 下载 Update.sh
 dl_update_shell() {
     curl -sfL https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Conf/Qinglong/Update.sh -o $config_update_path
