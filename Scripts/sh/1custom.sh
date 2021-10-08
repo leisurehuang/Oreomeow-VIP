@@ -34,6 +34,9 @@ run_update() {
     task /ql/config/Update.sh; ql extra; task /ql/config/code.sh
 }
 
+read -p "是否配置Bot机器人, n 跳过, y 配置, 回车默认 n:" bot
+    bot=${bot:-'n'}
+
 dl_update_shell && chmod 755 $config_update_path && add_update && run_update
 
 # 添加定时任务 ql bot
@@ -62,8 +65,11 @@ set_bot_json() {
     sed -i "s/ASDFAWEFADSFAWEFDSFASFD/${api_hash}/" $bot_json
 }
 
-add_ql_bot && set_bot_json && ql bot
-
+if [ "${bot}" = 'y' ]; then
+    add_ql_bot && set_bot_json && ql bot
+else
+    echo "已为您跳过操作 Bot机器人"
+fi
 
 # 提示配置结束
 echo -e "\n配置到此结束, 管理地址: 后台ip:57700 "
