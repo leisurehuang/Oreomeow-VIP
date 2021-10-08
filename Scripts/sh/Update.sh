@@ -26,7 +26,7 @@ TG_USER_ID=""
 openCardBean="10"
 
 CollectedRepo="4"
-OtherRepo="3 10 12 15"
+OtherRepo="3 10 12"
 Ninja="off"
 
 repoNum="6"
