@@ -27,12 +27,12 @@ add_update() {
         echo "开始添加 Update.sh"
         # 获取token
         token=$(cat /ql/config/auth.json | jq --raw-output .token)
-        curl -s -H 'Accept: application/json' -H "Authorization: Bearer $token" -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept-Language: zh-CN,zh;q=0.9' --data-binary '{"name":"更新配置与任务","command":"task /ql/config/Update.sh; ql extra; /ql/config/code.sh","schedule":"16 6 * * *"}' --compressed 'http://127.0.0.1:5700/api/crons?t=1624782068473'
+        curl -s -H 'Accept: application/json' -H "Authorization: Bearer $token" -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept-Language: zh-CN,zh;q=0.9' --data-binary '{"name":"更新配置与任务","command":"task /ql/config/Update.sh; ql extra; task /ql/config/code.sh","schedule":"16 6 * * *"}' --compressed 'http://127.0.0.1:5700/api/crons?t=1624782068473'
     fi
 }
 # 运行一次 Update
 run_update() {
-    task /ql/config/Update.sh; ql extra; /ql/config/code.sh
+    task /ql/config/Update.sh; ql extra; task /ql/config/code.sh
     sleep 5
 }
 
