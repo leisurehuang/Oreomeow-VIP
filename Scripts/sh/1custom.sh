@@ -9,7 +9,7 @@ bot_json=$dir_config/bot.json
 
 # 下载 Update.sh
 dl_update_shell() {
-    curl -sfL https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Conf/Qinglong/Update.sh -o $config_update_path
+    curl -sfL https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/sh/Update.sh -o $config_update_path
     # 判断是否下载成功
     update_size=$(ls -l $config_update_path | awk '{print $5}')
     if (( $(echo "${update_size} < 100" | bc -l) )); then
