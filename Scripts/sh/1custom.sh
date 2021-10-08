@@ -66,14 +66,7 @@ set_bot_json() {
     sed -i "s/ASDFAWEFADSFAWEFDSFASFD/${api_hash}/" $bot_json
 }
 
-# 再运行一次 ql bot
-run_ql_bot() {
-    ql bot
-    echo -e "------ 机器累了，休息 10s ------"
-    sleep 10
-}
-
-add_ql_bot && set_bot_json && run_ql_bot
+add_ql_bot && set_bot_json && ql bot
 
 
 # 提示配置结束
