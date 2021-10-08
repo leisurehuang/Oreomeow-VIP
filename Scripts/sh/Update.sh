@@ -29,7 +29,7 @@ CollectedRepo="4"
 OtherRepo="3 10 12"
 Ninja="off"
 
-repoNum="6"
+repoNum="4"
 HelpType="HelpType=\"0\""
 BreakHelpType="BreakHelpType=\"1\""
 BreakHelpNum="BreakHelpNum=\"31-1000\""
@@ -57,7 +57,7 @@ update_extra() {
 update_code() {
     curl -sfL https://git.io/code.sh -o $file_raw_code
     mv -b $file_raw_code $dir_config
-    sed -i "s/repo=\$repo4/repo=\$repo${repoNum}/g" $file_config_code
+    # sed -i "s/repo=\$repo4/repo=\$repo${repoNum}/g" $file_config_code
     sed -i "/^HelpType=/c${HelpType}" $file_config_code
     sed -i "/^BreakHelpType=/c${BreakHelpType}" $file_config_code
     sed -i "/^BreakHelpNum=/c${BreakHelpNum}" $file_config_code
