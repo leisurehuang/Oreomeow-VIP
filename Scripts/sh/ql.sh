@@ -293,7 +293,5 @@ if [ "$port" = "2" ]; then
     cat $CONFIG_PATH/auth.json
 fi
 
-log "8.开始青龙内部配置"
-docker exec -it $CONTAINER_NAME bash -c "$(curl -fsSL https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/sh/1custom.sh)"
 
-log "enjoy!!!"
+log "请登录 ip:$QL_PORT enjoy~"
