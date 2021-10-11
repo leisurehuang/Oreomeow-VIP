@@ -25,12 +25,7 @@ HAS_IMAGE=false
 PULL_IMAGE=true
 HAS_CONTAINER=false
 DEL_CONTAINER=true
-INSTALL_WATCH=false
-ENABLE_HANGUP=true
-ENABLE_WEB_PANEL=true
 OLD_IMAGE_ID=""
-ENABLE_HANGUP_ENV="--env ENABLE_HANGUP=true"
-ENABLE_WEB_PANEL_ENV="--env ENABLE_WEB_PANEL=true"
 
 
 log() {
@@ -139,14 +134,6 @@ input_container_name() {
 }
 input_container_name
 
-# 是否安装 WatchTower
-inp "是否安装 containrrr/watchtower 自动更新 Docker 容器：\n1) 安装\n2) 不安装[默认]"
-opt
-read watchtower
-if [ "$watchtower" = "1" ]; then
-    INSTALL_WATCH=true
-fi
-
 inp "请选择容器的网络类型：\n1) host\n2) bridge[默认]"
 opt
 read net
@@ -154,20 +141,6 @@ if [ "$net" = "1" ]; then
     NETWORK="host"
     MAPPING_QL_PORT=""
     MAPPING_NINJA_PORT=""
-fi
-
-inp "是否在启动容器时自动启动挂机程序：\n1) 开启[默认]\n2) 关闭"
-opt
-read hang_s
-if [ "$hang_s" = "2" ]; then
-    ENABLE_HANGUP_ENV=""
-fi
-
-inp "是否启用青龙面板：\n1) 启用[默认]\n2) 不启用"
-opt
-read pannel
-if [ "$pannel" = "2" ]; then
-    ENABLE_WEB_PANNEL_ENV=""
 fi
 
 # 端口问题
@@ -246,23 +219,10 @@ docker run -dit \
     --hostname qinglong \
     --restart always \
     --network $NETWORK \
-    $ENABLE_HANGUP_ENV \
-    $ENABLE_WEB_PANEL_ENV \
     $DOCKER_IMG_NAME:$TAG
 
 if [ $? -ne 0 ] ; then
     cancelrun "** 错误：容器创建失败，请翻译以上英文报错，Google/百度尝试解决问题！"
-fi
-
-if [ $INSTALL_WATCH = true ]; then
-    log "3.1.开始创建容器并执行"
-    docker run -d \
-    --name watchtower \
-    --restart always \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    containrrr/watchtower -c\
-    --schedule "13,14,15 3 * * * *" \
-    $CONTAINER_NAME
 fi
 
 # 检查 config 文件是否存在
