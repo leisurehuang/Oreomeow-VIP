@@ -134,7 +134,7 @@ input_container_name() {
 }
 input_container_name
 
-inp "请选择容器的网络类型：\n1) host\n2) bridge[默认]"
+inp "请选择容器的网络类型：\n1) host[默认]\n2) bridge"
 opt
 read net
 if [ "$net" = "1" ]; then
