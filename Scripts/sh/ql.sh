@@ -249,7 +249,7 @@ else
 fi
 
 if [ "$port" = "2" ]; then
-    log "6.用户名和密码已显示，请登录 ip:$QL_PORT"
+    log "6.用户名和密码已显示，请登录 ql/ (或 路由ip:$QL_PORT)"
     cat $CONFIG_PATH/auth.json
 fi
 
