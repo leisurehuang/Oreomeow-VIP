@@ -53,7 +53,7 @@ update_extra() {
     sed -i "s/OtherRepo=()/OtherRepo=(${OtherRepo})/g" $file_config_extra
     sed -i "s/Ninja=\"on\"/Ninja=\"${Ninja}\"/" $file_config_extra
     sed -i '/NOWTIME=/a\\tcp \/ql\/config\/sendNotify.js \/ql\/scripts\/sendNotify.js' $file_config_extra
-    echo 'cat /ql/db/wskey.list >> /ql/config/wskey.list && :> /ql/db/wskey.list' >> $file_config_extra
+    # echo 'cat /ql/db/wskey.list >> /ql/config/wskey.list && :> /ql/db/wskey.list' >> $file_config_extra
 }
 
 update_code() {
