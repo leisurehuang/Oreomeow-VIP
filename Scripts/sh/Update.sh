@@ -89,6 +89,11 @@ random_cookie() {
     ql check
 }
 
+update_notify() {
+    wget -O sendNotify.js https://raw.githubusercontent.com/ccwav/QLScript2/main/sendNotify.js
+    sed -ri 's/\\n\\n本通知 By ccwav Mod/\\n\\n本通知 By Oreo Mod/' "$file_config_notify_js"
+}
+
 update_config
 update_extra
 update_code
@@ -98,6 +103,8 @@ update_jdCookie
 if [ $(date "+%H") -eq 18 ]; then
     random_cookie
 fi
+
+update_notify
 
 case $@ in
     ck)
