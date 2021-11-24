@@ -63,6 +63,7 @@ update_code() {
     sed -i "/^HelpType=/c${HelpType}" $file_config_code
     sed -i "/^BreakHelpType=/c${BreakHelpType}" $file_config_code
     sed -i "/^BreakHelpNum=/c${BreakHelpNum}" $file_config_code
+    sed -i "/^package_name=/c${package_name}" "$file_config_code"
 }
 
 update_task_before() {
