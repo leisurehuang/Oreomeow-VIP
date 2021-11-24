@@ -23,6 +23,8 @@ file_config_notify_js=$dir_config/sendNotify.js
 GithubProxyUrl=""
 TG_BOT_TOKEN=""
 TG_USER_ID=""
+TG_PROXY_HOST=""
+TG_PROXY_PORT=""
 openCardBean="10"
 
 CollectedRepo="4"
@@ -33,7 +35,7 @@ repoNum="4"
 HelpType="HelpType=\"0\""
 BreakHelpType="BreakHelpType=\"1\""
 BreakHelpNum="BreakHelpNum=\"31-1000\""
-
+package_name="package_name=\"@types/node canvas crypto-js date-fns dotenv fs js-base64 jsdom png-js request require ts-md5 tslib typescript\""
 
 update_config() {
     curl -sfL https://git.io/config.sh -o $file_raw_config
