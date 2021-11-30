@@ -20,22 +20,27 @@ file_raw_task_before=$dir_raw/task_before.sh
 file_config_task_before=$dir_config/task_before.sh
 file_config_notify_js=$dir_config/sendNotify.js
 
-GithubProxyUrl=""
-TG_BOT_TOKEN=""
-TG_USER_ID=""
-TG_PROXY_HOST=""
-TG_PROXY_PORT=""
-openCardBean="10"
+GithubProxyUrl=''
+TG_BOT_TOKEN=''
+TG_USER_ID=''
+TG_PROXY_HOST=''
+TG_PROXY_PORT=''
+openCardBean=''
+Recombin_CK_Mode='3'
+Recombin_CK_ARG1='1'
+Recombin_CK_ARG2='2'
+Remove_Void_CK='1'
 
-CollectedRepo="4"
-OtherRepo="3 10 12"
-Ninja="off"
+CollectedRepo='4'
+OtherRepo='3 10 12'
+Ninja='off'
 
-repoNum="4"
-HelpType="HelpType=\"0\""
-BreakHelpType="BreakHelpType=\"1\""
-BreakHelpNum="BreakHelpNum=\"31-1000\""
-package_name="package_name=\"@types/node canvas crypto-js date-fns dotenv fs js-base64 jsdom png-js request require ts-md5 tslib typescript\""
+repoNum='4'
+HelpType='HelpType="0"'
+BreakHelpType='BreakHelpType="1"'
+BreakHelpNum='BreakHelpNum="31-1000"'
+package_name='package_name="@types/node axios canvas crypto-js date-fns dotenv download form-data fs global-agent got jieba js-base64 jsdom json5 md5 png-js prettytable qrcode-terminal requests require tough-cookie tslib ts-md5 tunnel typescript ws"'
+front_num='front_num="1"'
 
 update_config() {
     curl -sfL https://git.io/config.sh -o $file_raw_config
@@ -44,6 +49,10 @@ update_config() {
     sed -i "s/TG_BOT_TOKEN=\"\"/TG_BOT_TOKEN=\"${TG_BOT_TOKEN}\"/g" $file_config_config
     sed -i "s/TG_USER_ID=\"\"/TG_USER_ID=\"${TG_USER_ID}\"/g" $file_config_config
     sed -i "s/openCardBean=\"30\"/openCardBean=\"${openCardBean}\"/g" $file_config_config
+	sed -i "s/Recombin_CK_Mode=\"\"/Recombin_CK_Mode=\"${Recombin_CK_Mode}\"/g" "$file_config_config"
+    sed -i "s/Recombin_CK_ARG1=\"\"/Recombin_CK_ARG1=\"${Recombin_CK_ARG1}\"/g" "$file_config_config"
+    sed -i "s/Recombin_CK_ARG2=\"\"/Recombin_CK_ARG2=\"${Recombin_CK_ARG2}\"/g" "$file_config_config"
+    sed -i "s/Remove_Void_CK=\"\"/Remove_Void_CK=\"${Remove_Void_CK}\"/g" "$file_config_config"
 }
 
 update_extra() {
@@ -64,6 +73,7 @@ update_code() {
     sed -i "/^BreakHelpType=/c${BreakHelpType}" $file_config_code
     sed -i "/^BreakHelpNum=/c${BreakHelpNum}" $file_config_code
     sed -i "/^package_name=/c${package_name}" "$file_config_code"
+	sed -i "/^front_num=/c${front_num}" "$file_config_code"
 }
 
 update_task_before() {
