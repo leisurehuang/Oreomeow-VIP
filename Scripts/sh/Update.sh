@@ -49,7 +49,7 @@ update_config() {
     sed -i "s/TG_BOT_TOKEN=\"\"/TG_BOT_TOKEN=\"${TG_BOT_TOKEN}\"/g" $file_config_config
     sed -i "s/TG_USER_ID=\"\"/TG_USER_ID=\"${TG_USER_ID}\"/g" $file_config_config
     sed -i "s/openCardBean=\"30\"/openCardBean=\"${openCardBean}\"/g" $file_config_config
-	sed -i "s/Recombin_CK_Mode=\"\"/Recombin_CK_Mode=\"${Recombin_CK_Mode}\"/g" "$file_config_config"
+    sed -i "s/Recombin_CK_Mode=\"\"/Recombin_CK_Mode=\"${Recombin_CK_Mode}\"/g" "$file_config_config"
     sed -i "s/Recombin_CK_ARG1=\"\"/Recombin_CK_ARG1=\"${Recombin_CK_ARG1}\"/g" "$file_config_config"
     sed -i "s/Recombin_CK_ARG2=\"\"/Recombin_CK_ARG2=\"${Recombin_CK_ARG2}\"/g" "$file_config_config"
     sed -i "s/Remove_Void_CK=\"\"/Remove_Void_CK=\"${Remove_Void_CK}\"/g" "$file_config_config"
@@ -73,7 +73,7 @@ update_code() {
     sed -i "/^BreakHelpType=/c${BreakHelpType}" $file_config_code
     sed -i "/^BreakHelpNum=/c${BreakHelpNum}" $file_config_code
     sed -i "/^package_name=/c${package_name}" "$file_config_code"
-	sed -i "/^front_num=/c${front_num}" "$file_config_code"
+    sed -i "/^front_num=/c${front_num}" "$file_config_code"
 }
 
 update_task_before() {
