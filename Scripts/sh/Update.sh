@@ -32,7 +32,7 @@ Recombin_CK_ARG2='2'
 Remove_Void_CK='1'
 
 CollectedRepo='4'
-OtherRepo='3 10 12'
+OtherRepo='3 5 6 9 10'
 Ninja='off'
 
 repoNum='4'
