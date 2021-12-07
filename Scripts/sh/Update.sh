@@ -81,11 +81,6 @@ update_task_before() {
     mv -b $file_raw_task_before $dir_config
 }
 
-update_jdCookie() {
-    curl -sfL https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/sh/Helpcode2.8/jdCookie.js -o $dir_config/jdCookie.js
-    mv -b $dir_config/jdCookie.js $dir_config
-}
-
 random_cookie() {
     c=1000000
     for r in {1..3}; do
@@ -106,7 +101,6 @@ update_config
 update_extra
 update_code
 update_task_before
-update_jdCookie
 
 if [ $(date "+%H") -eq 18 ]; then
     random_cookie
