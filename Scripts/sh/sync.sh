@@ -15,6 +15,7 @@ file_config_update=$dir_config/Update.sh
 update_update() {
     curl -sL https://cdn.jsdelivr.net/gh/Oreomeow/VIP@main/Scripts/sh/Update.sh >"$file_config_update"
     sed -i "/openCardBean/d" "$file_config_update"
+	sed -i "/Update.sh/d" "$file_config_update"
     sed -i "s/CollectedRepo=(4)/CollectedRepo=(4)/" "$file_config_update"
     sed -i "s/OtherRepo=()/OtherRepo=(3 5 6 9 10)/" "$file_config_update"
     sed -i "s/RawScript=(1 2)/RawScript=(1 2)/" "$file_config_update"
@@ -24,7 +25,6 @@ update_update() {
 update_update
 
 cat >>$file_config_update <<-EOF
-echo "ql check" >> \$file_config_extra
 echo "
 if [[ $(date "+%-H") -eq 0 || $(date "+%-H") -eq 8 || $(date "+%-H") -eq 16 ]] && [ $(date "+%-M") -eq 0 ] && [ $(date "+%-S") -gt 4 ]; then
   export JD_JOY_REWARD_NAME="20"
@@ -35,3 +35,5 @@ fi
 EOF
 
 task /ql/config/Update.sh
+ql extra
+task /ql/config/code.sh
