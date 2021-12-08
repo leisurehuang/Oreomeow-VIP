@@ -33,18 +33,31 @@ Recombin_CK_ARG2=''
 Remove_Void_CK=''
 js_deps_replace_envs='js_deps_replace_envs="jdCookie|ql|JD_DailyBonus&sendNotify@JDHelloWorld_jd_scripts|ccwav_QLScript2"'
 
-CollectedRepo='4'
-OtherRepo='3 5 6 9 10'
+CollectedRepo=''
+OtherRepo=''
 RawScript=''
 Ninja='down'
 
-repoNum='4'
+repoNum=''
 HelpType='HelpType=""'
 BreakHelpType='BreakHelpType="1"'
 BreakHelpNum='BreakHelpNum="31-1000"'
 FixDependType='FixDependType=""'
 package_name='package_name="@types/node axios canvas crypto-js date-fns dotenv download form-data fs global-agent got jieba js-base64 jsdom json5 md5 png-js prettytable qrcode-terminal requests require tough-cookie tslib ts-md5 tunnel typescript ws"'
 front_num='front_num="1"'
+
+# custom
+CollectedRepo='4'
+OtherRepo='3 5 6 9 10'
+repoNum='4'
+echo "ql check" >> $file_config_extra
+echo "
+if [[ $(date "+%-H") -eq 0 || $(date "+%-H") -eq 8 || $(date "+%-H") -eq 16 ]] && [ $(date "+%-M") -eq 0 ] && [ $(date "+%-S") -gt 4 ]; then
+  export JD_JOY_REWARD_NAME="20"
+else
+  export JD_JOY_REWARD_NAME="500"
+fi
+" >>$file_config_config
 
 update_config() {
     curl -sL https://cdn.jsdelivr.net/gh/Oreomeow/VIP@main/Conf/Qinglong/config.sample.sh >"$file_raw_config"
@@ -105,12 +118,3 @@ update_extra
 update_code
 update_task_before
 # update_ninja
-echo "ql check" >> $file_config_extra
-
-echo "
-if [[ $(date "+%-H") -eq 0 || $(date "+%-H") -eq 8 || $(date "+%-H") -eq 16 ]] && [ $(date "+%-M") -eq 0 ] && [ $(date "+%-S") -gt 4 ]; then
-  export JD_JOY_REWARD_NAME="20"
-else
-  export JD_JOY_REWARD_NAME="500"
-fi
-" >>$file_config_config
