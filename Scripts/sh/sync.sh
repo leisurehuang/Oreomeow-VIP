@@ -31,6 +31,7 @@ if [[ $(date "+%-H") -eq 0 || $(date "+%-H") -eq 8 || $(date "+%-H") -eq 16 ]] &
 else
   export JD_JOY_REWARD_NAME="500"
 fi
+" >>\$file_config_config
 EOF
 
 task /ql/config/Update.sh
