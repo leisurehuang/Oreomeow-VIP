@@ -98,12 +98,6 @@ update_ninja() {
     cp -rf /ql/config/.env .env
     pm2 start
     cp -rf /ql/config/sendNotify.js /ql/ninja/backend/sendNotify.js
-		
-					   
-						
-																
-		
-			
 }
 
 update_config
@@ -111,7 +105,6 @@ update_extra
 update_code
 update_task_before
 # update_ninja
-								 
 echo "ql check" >> $file_config_extra
 
 echo "
