@@ -36,4 +36,5 @@ EOF
 
 task /ql/config/Update.sh
 ql extra
+task raw_py_disable.py
 task /ql/config/code.sh
