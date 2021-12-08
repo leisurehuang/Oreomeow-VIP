@@ -49,6 +49,7 @@ front_num='front_num="1"'
 # custom
 CollectedRepo='4'
 OtherRepo='3 5 6 9 10'
+RawScript='1 2'
 repoNum='4'
 echo "ql check" >> $file_config_extra
 echo "
