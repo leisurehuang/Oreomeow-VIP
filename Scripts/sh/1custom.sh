@@ -37,7 +37,7 @@ run_sync() {
 read -p "是否配置Bot机器人, n 跳过, y 配置, 回车默认 n:" bot
     bot=${bot:-'n'}
 
-dl_sync_shell && chmod 755 $config_sync_path && add_sync && run_sync
+dl_sync_shell && add_sync && run_sync
 
 # 添加定时任务 ql bot
 add_ql_bot() {
