@@ -4,40 +4,40 @@
 dir_config=/ql/config
 dir_script=/ql/scripts
 dir_repo=/ql/repo
-config_update_path=$dir_config/Update.sh
+config_sync_path=$dir_config/sync.sh
 bot_json=$dir_config/bot.json
 
-# 下载 Update.sh
-dl_update_shell() {
-    curl -sfL https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/sh/Update.sh -o $config_update_path
+# 下载 sync.sh
+dl_sync_shell() {
+    curl -sfL https://raw.githubusercontent.com/kiddin9/Oreomeow-VIP/main/Scripts/sh/sync.sh -o $config_sync_path
     # 判断是否下载成功
-    update_size=$(ls -l $config_update_path | awk '{print $5}')
+    update_size=$(ls -l $config_sync_path | awk '{print $5}')
     if (( $(echo "${update_size} < 100" | bc -l) )); then
-        echo "Update.sh 下载失败"
+        echo "sync.sh 下载失败"
         exit 0
     fi
 }
 
-# 将 Update.sh 添加到定时任务
-add_update() {
-    if [ "$(grep -c "Update.sh" /ql/config/crontab.list)" != 0 ]; then
-        echo "您的任务列表中已存在 Update.sh"
+# 将 sync.sh 添加到定时任务
+add_sync() {
+    if [ "$(grep -c "sync.sh" /ql/config/crontab.list)" != 0 ]; then
+        echo "您的任务列表中已存在 sync.sh"
     else
-        echo "开始添加 Update.sh"
+        echo "开始添加 sync.sh"
         # 获取token
         token=$(cat /ql/config/auth.json | jq --raw-output .token)
         curl -s -H 'Accept: application/json' -H "Authorization: Bearer $token" -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept-Language: zh-CN,zh;q=0.9' --data-binary '{"name":"更新配置和任务","command":"task /ql/config/sync.sh","schedule":"16 6 * * *"}' --compressed 'http://127.0.0.1:5700/api/crons?t=1624782068473'
     fi
 }
 # 运行一次 Update
-run_update() {
-    task /ql/config/Update.sh; ql extra; task /ql/config/code.sh
+run_sync() {
+    task /ql/config/sync.sh; ql extra; task /ql/config/code.sh
 }
 
 read -p "是否配置Bot机器人, n 跳过, y 配置, 回车默认 n:" bot
     bot=${bot:-'n'}
 
-dl_update_shell && chmod 755 $config_update_path && add_update && run_update
+dl_sync_shell && chmod 755 $config_sync_path && add_sync && run_sync
 
 # 添加定时任务 ql bot
 add_ql_bot() {
