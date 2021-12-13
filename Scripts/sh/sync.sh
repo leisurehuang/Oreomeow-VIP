@@ -16,10 +16,10 @@ update_update() {
     curl -sL https://cdn.jsdelivr.net/gh/Oreomeow/VIP@main/Scripts/sh/Update.sh >"$file_config_update"
     sed -i "/openCardBean/d" "$file_config_update"
 	sed -i "/Update.sh/d" "$file_config_update"
-    sed -i "s/CollectedRepo=(4)/CollectedRepo=(4)/" "$file_config_update"
-    sed -i "s/OtherRepo=()/OtherRepo=(3 5 6 9 10)/" "$file_config_update"
-    sed -i "s/RawScript=(1 2)/RawScript=(1 2)/" "$file_config_update"
-    sed -i "s/repo=\$repo4/repo=\$repo4/" "$file_config_update"
+    sed -i 's/${CollectedRepo}/4/' "$file_config_update"
+    sed -i 's/${OtherRepo}/3 5 6 9 10/' "$file_config_update"
+    sed -i 's/${RawScript}/1 2/' "$file_config_update"
+    sed -i 's/$repo${repoNum}/$repo4/' "$file_config_update"
 }
 
 update_update
