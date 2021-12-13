@@ -37,6 +37,7 @@ run_sync() {
 read -p "是否配置Bot机器人, n 跳过, y 配置, 回车默认 n:" bot
     bot=${bot:-'n'}
 
+echo "开始拉取任务脚本,请本路由器网络已过墙."
 dl_sync_shell && add_sync && run_sync
 
 # 添加定时任务 ql bot
