@@ -17,7 +17,7 @@ update_update() {
     sed -i "/openCardBean/d" "$file_config_update"
 	sed -i "/Update.sh/d" "$file_config_update"
     sed -i 's/${CollectedRepo}/4/' "$file_config_update"
-    sed -i 's/${OtherRepo}/3 5 6 9 10/' "$file_config_update"
+    sed -i 's/${OtherRepo}/3 5 6 9 10 12/' "$file_config_update"
     sed -i 's/${RawScript}/1 2/' "$file_config_update"
     sed -i 's/$repo${repoNum}/$repo4/' "$file_config_update"
 }
