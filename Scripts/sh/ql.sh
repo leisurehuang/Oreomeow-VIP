@@ -60,8 +60,10 @@ docker_install() {
             lsb_dist="$(. /etc/os-release && echo "$ID")"
         fi
         if [ $lsb_dist == "openwrt" ]; then
-            echo "openwrt 环境请自行安装 docker"
-            exit 1
+            echo "安装 docker 环境..."
+            opkg update -V0
+            opkg install -V0 --force-checksum --force-depends luci-app-dockerman
+            echo "安装 docker 环境...安装完成!"
         else
             echo "安装 docker 环境..."
             curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
