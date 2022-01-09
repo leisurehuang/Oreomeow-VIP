@@ -23,7 +23,7 @@ add_sync() {
     if [ "$(grep -c "sync.sh" /ql/config/crontab.list)" != 0 ]; then
         echo "您的任务列表中已存在 sync.sh"
     else
-        echo "开始添加 sync.sh"
+        echo "添加 sync.sh"
         # 获取token
         token=$(cat /ql/config/auth.json | jq --raw-output .token)
         curl -s -H 'Accept: application/json' -H "Authorization: Bearer $token" -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept-Language: zh-CN,zh;q=0.9' --data-binary '{"name":"更新配置和任务","command":"task /ql/config/sync.sh","schedule":"16 6 * * *"}' --compressed 'http://127.0.0.1:5700/api/crons?t=1624782068473'
@@ -31,6 +31,7 @@ add_sync() {
 }
 # 运行一次 Update
 run_sync() {
+    echo "请耐心等待..."
     task /ql/config/sync.sh; ql extra; task /ql/config/code.sh
 }
 
