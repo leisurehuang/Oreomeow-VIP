@@ -13,7 +13,7 @@ file_config_config=$dir_config/config.sh
 file_config_update=$dir_config/Update.sh
 
 update_update() {
-    curl -sL https://cdn.jsdelivr.net/gh/Oreomeow/VIP@main/Scripts/sh/Update.sh >"$file_config_update"
+    curl -sL https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/sh/Update.sh >"$file_config_update"
     sed -i "/openCardBean/d" "$file_config_update"
 	sed -i "/Update.sh/d" "$file_config_update"
     sed -i "s/CollectedRepo=''/CollectedRepo='10'/" "$file_config_update"
