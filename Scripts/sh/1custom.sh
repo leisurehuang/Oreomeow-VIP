@@ -32,7 +32,7 @@ add_sync() {
 # 运行一次 Update
 run_sync() {
     echo "请耐心等待..."
-    task /ql/config/sync.sh; ql extra; task /ql/config/code.sh
+    task /ql/config/sync.sh
 }
 
 read -p "是否配置Bot机器人, n 跳过, y 配置, 回车默认 n:" bot
