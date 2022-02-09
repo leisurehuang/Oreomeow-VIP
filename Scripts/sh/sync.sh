@@ -35,6 +35,7 @@ fi
 EOF
 
 task /ql/config/Update.sh
+sed -i 's/MaxConcurrentNum=.*/MaxConcurrentNum="5"/' $file_config_config
 ql extra
 task raw_py_disable.py
 task /ql/config/code.sh
