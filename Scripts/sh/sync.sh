@@ -16,10 +16,10 @@ update_update() {
     curl -sL https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/sh/Update.sh >"$file_config_update"
     sed -i "/openCardBean/d" "$file_config_update"
 	sed -i "/Update.sh/d" "$file_config_update"
-    sed -i "s/CollectedRepo=''/CollectedRepo='10'/" "$file_config_update"
+    sed -i "s/CollectedRepo=''/CollectedRepo='12'/" "$file_config_update"
     sed -i "s/OtherRepo=''/OtherRepo='3 5 9'/" "$file_config_update"
     sed -i "s/RawScript=''/RawScript='1 2'/" "$file_config_update"
-    sed -i "s/repoNum=''/repoNum='10'/" "$file_config_update"
+    sed -i "s/repoNum=''/repoNum='5'/" "$file_config_update"
 }
 
 update_update
