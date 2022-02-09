@@ -19,7 +19,7 @@ update_update() {
     sed -i "s/CollectedRepo=''/CollectedRepo='12'/" "$file_config_update"
     sed -i "s/OtherRepo=''/OtherRepo='3 5 9'/" "$file_config_update"
     sed -i "s/RawScript=''/RawScript='1 2'/" "$file_config_update"
-    sed -i "s/repoNum=''/repoNum=$CollectedRepo/" "$file_config_update"
+    sed -i "s/repoNum=''/repoNum=\"\$CollectedRepo\"/" "$file_config_update"
 }
 
 update_update
