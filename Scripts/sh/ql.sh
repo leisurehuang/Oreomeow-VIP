@@ -74,8 +74,8 @@ docker_install() {
     fi
 }
 
-warn "来晚了,已被重拳出击,暂时不可用"
-exit 0;
+#warn "来晚了,已被重拳出击,暂时不可用"
+#exit 0;
 docker_install
 warn "降低学习成本，小白回车到底，一路默认选择"
 # 配置文件保存目录
