@@ -34,7 +34,7 @@ fi
 " >>\$file_config_config
 EOF
 
-task /ql/config/Update.sh
+task $dir_config/Update.sh
 sed -i 's/MaxConcurrentNum=.*/MaxConcurrentNum="5"/' $file_config_config
 sed -i 's?\(ql repo https://github.com/gys619.*\)?\1 "main"?'  $file_config_extra
 ql extra
