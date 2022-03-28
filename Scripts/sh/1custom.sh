@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 ## 本脚本搬运并模仿 liuqitoday
-dir_config=/ql/config
-dir_script=/ql/scripts
-dir_repo=/ql/repo
+dir_config=/ql/data/config
+dir_script=/ql/data/scripts
+dir_repo=/ql/data/repo
 config_sync_path=$dir_config/sync.sh
 bot_json=$dir_config/bot.json
 
@@ -20,19 +20,19 @@ dl_sync_shell() {
 
 # 将 sync.sh 添加到定时任务
 add_sync() {
-    if [ "$(grep -c "sync.sh" /ql/config/crontab.list)" != 0 ]; then
+    if [ "$(grep -c "sync.sh" $dir_config/crontab.list)" != 0 ]; then
         echo "您的任务列表中已存在 sync.sh"
     else
         echo "添加 sync.sh"
         # 获取token
-        token=$(cat /ql/config/auth.json | jq --raw-output .token)
+        token=$(cat $dir_config/auth.json | jq --raw-output .token)
         curl -s -H 'Accept: application/json' -H "Authorization: Bearer $token" -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept-Language: zh-CN,zh;q=0.9' --data-binary '{"name":"更新配置和任务","command":"task /ql/config/sync.sh","schedule":"16 6 * * *"}' --compressed 'http://127.0.0.1:5700/api/crons?t=1624782068473'
     fi
 }
 # 运行一次 Update
 run_sync() {
     echo "请耐心等待..."
-    task /ql/config/sync.sh
+    task $dir_config/sync.sh
 }
 
 read -p "是否配置Bot机器人, n 跳过, y 配置, 回车默认 n:" bot
@@ -43,12 +43,12 @@ dl_sync_shell && add_sync && run_sync
 
 # 添加定时任务 ql bot
 add_ql_bot() {
-    if [ "$(grep -c "ql\ bot" /ql/config/crontab.list)" != 0 ]; then
+    if [ "$(grep -c "ql\ bot" $dir_config/crontab.list)" != 0 ]; then
         echo "您的任务列表中已存在 task:ql bot"
     else
         echo "开始添加 task:ql bot"
         # 获取token
-        token=$(cat /ql/config/auth.json | jq --raw-output .token)
+        token=$(cat $dir_config/auth.json | jq --raw-output .token)
         curl -s -H 'Accept: application/json' -H "Authorization: Bearer $token" -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept-Language: zh-CN,zh;q=0.9' --data-binary '{"name":"拉取机器人","command":"ql bot","schedule":"13 14 * * *"}' --compressed 'http://127.0.0.1:5700/api/crons?t=1626247933219'
     fi
 }
