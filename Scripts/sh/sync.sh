@@ -6,8 +6,7 @@ new Env('自用更新');
 COMMENT
 
 ## 导入通用变量与函数
-dir_shell=/ql/shell
-. $dir_shell/share.sh
+dir_config=/ql/data/config
 
 file_config_config=$dir_config/config.sh
 file_config_update=$dir_config/Update.sh
@@ -40,4 +39,4 @@ sed -i 's/MaxConcurrentNum=.*/MaxConcurrentNum="5"/' $file_config_config
 sed -i 's?\(ql repo https://github.com/gys619.*\)?\1 "main"?'  $file_config_extra
 ql extra
 task raw_py_disable.py
-task /ql/config/code.sh
+task $dir_config/code.sh
