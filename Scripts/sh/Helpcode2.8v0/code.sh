@@ -4,7 +4,7 @@
 repo='JDHelloWorld_jd_scripts'
 
 ## 导入通用变量与函数
-dir_shell=/ql/shell
+dir_shell=/ql/data/shell
 . $dir_shell/share.sh
 
 ## 定义 jcode 脚本导出的互助码模板样式（选填）

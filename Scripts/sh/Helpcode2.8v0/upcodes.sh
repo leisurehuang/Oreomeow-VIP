@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## 导入通用变量与函数
-dir_shell=/ql/shell
+dir_shell=/ql/data/shell
 . $dir_shell/share.sh
 
 #读取最新日志

@@ -3,7 +3,7 @@
 ## Build 20210827-001
 
 ## 导入通用变量与函数
-dir_shell=/ql/shell
+dir_shell=/ql/data/shell
 . $dir_shell/share.sh
 
 dir_env_db=/$dir_db/env.db
@@ -29,9 +29,9 @@ DEBUG="1"
 ## 本脚本限制的最大线程数量
 proc_num="7"
 
-## 备份配置文件开关，默认是1，表示开启；设置为0，表示关闭。备份路径 /ql/config/bak/
+## 备份配置文件开关，默认是1，表示开启；设置为0，表示关闭。备份路径 /ql/data/config/bak/
 BACKUP="1"
-## 是否删除指定天数以前的备份文件开关，默认是1，表示开启；设置为0，表示关闭。删除路径 /ql/config/bak/
+## 是否删除指定天数以前的备份文件开关，默认是1，表示开启；设置为0，表示关闭。删除路径 /ql/data/config/bak/
 CLEANBAK="1"
 ## 定义删除指定天数以前的备份文件
 CLEANBAK_DAYS="2"
@@ -488,7 +488,7 @@ export_codes_sub_only(){
     if [ "$(cat $dir_scripts/"$repo"_jd_cfd.js | grep "// console.log(\`token")" != "" ]; then
         echo -e "\n# 正在修改 "$repo"_jd_cfd.js ，待完全运行 "$repo"_jd_cfd.js 后即可输出 token ！"
     fi
-    sed -i 's/.*\(c.*log\).*\(${JSON.*token)}\).*/      \1(\`\\n【京东账号${$.index}（${$.UserName}）的京喜token好友互助码】\2\\n\`)/g' /ql/scripts/*_jd_cfd.js
+    sed -i 's/.*\(c.*log\).*\(${JSON.*token)}\).*/      \1(\`\\n【京东账号${$.index}（${$.UserName}）的京喜token好友互助码】\2\\n\`)/g' /ql/data/scripts/*_jd_cfd.js
     local task_name=$1
     local config_name=$2
     local chinese_name=$3
@@ -629,12 +629,12 @@ install_dependencies_normal(){
     for i in $@; do
         case $i in
             canvas)
-                cd /ql/scripts
+                cd /ql/data/scripts
                 if [[ "$(echo $(npm ls $i) | grep ERR)" != "" ]]; then
                     npm uninstall $i
                 fi
                 if [[ "$(npm ls $i)" =~ (empty) ]]; then
-                    apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && npm i $i --prefix /ql/scripts --build-from-source
+                    apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && npm i $i --prefix /ql/data/scripts --build-from-source
                 fi
                 ;;
             *)
@@ -655,25 +655,25 @@ install_dependencies_force(){
     for i in $@; do
         case $i in
             canvas)
-                cd /ql/scripts
+                cd /ql/data/scripts
                 if [[ "$(npm ls $i)" =~ $i && "$(echo $(npm ls $i) | grep ERR)" != "" ]]; then
                     npm uninstall $i
-                    rm -rf /ql/scripts/node_modules/$i
+                    rm -rf /ql/data/scripts/node_modules/$i
                     rm -rf /usr/local/lib/node_modules/lodash/*
                 fi
                 if [[ "$(npm ls $i)" =~ (empty) ]]; then
-                    apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && npm i $i --prefix /ql/scripts --build-from-source --force
+                    apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && npm i $i --prefix /ql/data/scripts --build-from-source --force
                 fi
                 ;;
             *)
-                cd /ql/scripts
+                cd /ql/data/scripts
                 if [[ "$(npm ls $i)" =~ $i ]]; then
                     npm uninstall $i
-                    rm -rf /ql/scripts/node_modules/$i
+                    rm -rf /ql/data/scripts/node_modules/$i
                     rm -rf /usr/local/lib/node_modules/lodash/*
                 elif [[ "$(npm ls $i -g)" =~ $i && "$(echo $(npm ls $i -g) | grep ERR)" != "" ]]; then
                     npm uninstall $i -g
-                    rm -rf /ql/scripts/node_modules/$i
+                    rm -rf /ql/data/scripts/node_modules/$i
                     rm -rf /usr/local/lib/node_modules/lodash/*
                 fi
                 if [[ "$(npm ls $i -g)" =~ (empty) ]]; then
@@ -706,7 +706,7 @@ sleep 5
 update_help
 
 ## 修改curtinlv入会领豆配置文件的参数
-[[ -f /ql/repo/curtinlv_JD-Script/OpenCard/OpenCardConfig.ini ]] && sed -i "4c JD_COOKIE = '$(echo $JD_COOKIE | sed "s/&/ /g; s/\S*\(pt_key=\S\+;\)\S*\(pt_pin=\S\+;\)\S*/\1\2/g;" | perl -pe "s| |&|g")'" /ql/repo/curtinlv_JD-Script/OpenCard/OpenCardConfig.ini
+[[ -f /ql/data/repo/curtinlv_JD-Script/OpenCard/OpenCardConfig.ini ]] && sed -i "4c JD_COOKIE = '$(echo $JD_COOKIE | sed "s/&/ /g; s/\S*\(pt_key=\S\+;\)\S*\(pt_pin=\S\+;\)\S*/\1\2/g;" | perl -pe "s| |&|g")'" /ql/data/repo/curtinlv_JD-Script/OpenCard/OpenCardConfig.ini
 
 echo "All Done"
 exit

@@ -12,9 +12,9 @@ jdc为2.2锁定纯净版，无JDC,无BOT（注意要将ENABLE_WEB_JDC 环境变�
 
 ``` sh
 docker run -dit
--v $PWD/ql/config:/ql/config
--v $PWD/ql/log:/ql/log
--v $PWD/ql/scripts:/ql/scripts
+-v $PWD/ql/config:/ql/data/config
+-v $PWD/ql/log:/ql/data/log
+-v $PWD/ql/scripts:/ql/data/scripts
 -p 5700:5700
 -p 5701:5701
 -e ENABLE_HANGUP=false

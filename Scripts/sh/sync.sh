@@ -6,14 +6,14 @@ new Env('自用更新');
 COMMENT
 
 ## 导入通用变量与函数
-dir_config=/ql/config
+dir_config=/ql/data/config
 
 file_config_config=$dir_config/config.sh
 file_config_update=$dir_config/Update.sh
 file_config_extra=$dir_config/extra.sh
 
 update_update() {
-    curl -sL https://raw.githubusercontent.com/Oreomeow/VIP/main/Scripts/sh/Update.sh >"$file_config_update"
+    curl -sL https://raw.githubusercontent.com/leisurehuang/Oreomeow-VIP/main/Scripts/sh/Update.sh >"$file_config_update"
     sed -i "/openCardBean/d" "$file_config_update"
 	sed -i "/Update.sh/d" "$file_config_update"
     sed -i "s/CollectedRepo=''/CollectedRepo='12'/" "$file_config_update"

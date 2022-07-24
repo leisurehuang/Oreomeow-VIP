@@ -80,7 +80,7 @@ apk add python3 zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev
    
    ![jbot][jbot]
    
-3. 在 **青龙容器 (docker exec -it QL bash)** 中运行 `nohup python3 -m jbot >/ql/log/bot/bot.log 2>&1 &`
+3. 在 **青龙容器 (docker exec -it QL bash)** 中运行 `nohup python3 -m jbot >/ql/data/log/bot/bot.log 2>&1 &`
 
 
 #### III. 重启青龙容器 `docker container restart QL`
