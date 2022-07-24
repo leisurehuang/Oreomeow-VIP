@@ -6,6 +6,7 @@ cron: 32 6,18 * * *
 new Env('自用更新');
 COMMENT
 
+
 ## 导入通用变量与函数
 dir_config=/ql/data/config
 dir_shell=/ql/data/shell
