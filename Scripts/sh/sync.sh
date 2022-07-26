@@ -11,6 +11,7 @@ dir_config=/ql/data/config
 file_config_config=$dir_config/config.sh
 file_config_update=$dir_config/Update.sh
 file_config_extra=$dir_config/extra.sh
+file_scripts_disable=/ql/data/scripts/raw_py_disable.py
 
 update_update() {
     curl -sL https://raw.githubusercontent.com/leisurehuang/Oreomeow-VIP/main/Scripts/sh/Update.sh >"$file_config_update"
@@ -38,5 +39,7 @@ task $dir_config/Update.sh
 sed -i 's/MaxConcurrentNum=.*/MaxConcurrentNum="5"/' $file_config_config
 sed -i 's?\(ql repo https://github.com/gys619.*\)?\1 "main"?'  $file_config_extra
 ql extra
+
+sed -i 's/ql\/config/ql\/data\/config/g' $file_scripts_disable
 task raw_py_disable.py
 task $dir_config/code.sh
