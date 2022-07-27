@@ -10,7 +10,7 @@ COMMENT
 ## 导入通用变量与函数
 dir_config=/ql/data/config
 dir_shell=/ql/data/shell
-dir_raw=/ql/data/tmp
+dir_raw=/ql/data
 
 file_db_env=/ql/data/db/env.db
 file_raw_config=$dir_raw/config.sh
